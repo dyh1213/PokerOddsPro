@@ -1,0 +1,217 @@
+﻿@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web
+@using PokerOddsPro.Shared.Services;
+@using static PokerOddsPro.Shared.Helpers.Helper;
+@using static PokerOddsPro.Shared.Helpers.ConstPaths;
+@using PokerOddsPro.Shared.ViewModels;
+@using PokerOddsPro.Shared.Dto;
+
+<div class="main-container fade-in" style="min-height:@minHeight; height:@heightInVh;">
+
+    @* Section 1/5 - The player number display *@
+    <div class="flex-item-container widget-container seperator">
+        <span class="player-number">@playerNumber</span>
+    </div>
+
+    @* Section 2/5 - The player cards section *@
+    <div class="seperator" style="min-width: 100px;padding: 6px;width:@($"calc(({heightInVh} + 3px) * {CardHeightToWidthProportion} * 2)")">
+        @foreach (var card in player.Cards)
+        {
+            <CardDisplay card="@card" DisplayMode="@DisplayModeEnum.DarkMode" CustomWrapperCss="@GetCssForCard(card)" CardDisplayType="@cardDisplayType" />
+            if (card != player.Cards.Last())
+            {
+                <div style="width:6px;height:100%;float:left;"></div>
+            }
+        }
+    </div>
+
+
+    @* Section 3/5 - Either 1 section with 3 rows on mobile showing odds, or 3 sections with 2 rows each *@
+    @if (!browserSize.IsWidthSuperTiny)
+    {
+        <div class="flex-item-container odds-container seperator">
+            <div style="font-size:15px;">WIN</div>
+            <div class="odds-box" style="opacity:@GetPercentageTextOpacity(player.WinPercentage); color:green;">@GetPercentageDisplay(player.WinPercentage)</div>
+        </div>
+        <div class="flex-item-container odds-container seperator">
+            <div style="font-size:15px;">LOOSE</div>
+            <div class="odds-box" style="color:red;opacity:@GetPercentageTextOpacity(player.LoosePercentage);">@GetPercentageDisplay(player.LoosePercentage)</div>
+        </div>
+        <div class="flex-item-container odds-container seperator">
+            <div style="font-size:15px;">TIE</div>
+            <div class="odds-box" style="color:orange;opacity:@GetPercentageTextOpacity(player.TiePercentage);">@GetPercentageDisplay(player.TiePercentage)</div>
+        </div>
+    }
+    else
+    {
+        <div class="flex-item-container odds-container seperator" style="margin-left:10px">
+            <div class="odds-box-stacked">
+                <div style="opacity:@GetPercentageTextOpacity(player.WinPercentage); color:green;">W: @GetPercentageDisplay(player.WinPercentage)</div>
+            </div>
+            <div class="odds-box-stacked">
+                <div style="opacity:@GetPercentageTextOpacity(player.LoosePercentage); color:red;">L: @GetPercentageDisplay(player.LoosePercentage)</div>
+            </div>
+            <div class="odds-box-stacked">
+                <div style="opacity:@GetPercentageTextOpacity(player.TiePercentage); color:orange;">T: @GetPercentageDisplay(player.TiePercentage)</div>
+            </div>
+        </div>
+    }
+
+    @* Section 4/5 - The toggle to show table with percentage to get each hand in the next streets *@
+    <div class="flex-item-container widget-container seperator" @onclick="() => playerResultsDisplay.FlipToggle()">
+        <span style="font-size:40px;line-height:40px;font-weight:bolder;display:table;margin:0 auto; opacity:@opacityToggle;">@textToggle</span>
+    </div>
+
+    @* Section 5/5 - Section with icon to delete the player *@
+    <div class="flex-item-container widget-container" @onclick="DeletePlayer" style="
+                        background: @binImageUrl center center no-repeat;
+		                background-size: 40px 40px;" />
+</div>
+
+<PlayerResultsDisplay streets="@player?.streets?.ToList()" @ref="playerResultsDisplay" />
+<div style="display:grid"></div>
+
+<style>
+    .main-container {
+        overflow: initial;
+        width: auto;
+        display: flex;
+        margin: 15px 10px 10px 10px;
+        background-color: rgba(247,247,247,0.8);
+        border-style: solid;
+        border-color: #a2a2a2;
+        border-width: 1px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .odds-container{
+        flex:5 1 auto;
+        flex-direction:column;
+        min-width: 60px;
+    }
+
+    .widget-container {
+        max-width: 60px;
+        min-width: 30px;
+    }
+
+    .flex-item-container{
+        flex: 1 1 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .seperator{
+        border-right:1px solid rgba(198, 198, 198, 0.75);
+    }
+
+    .player-number{
+        font-size: 20px;
+        line-height: 20px;
+        font-weight: bolder;
+        display: table;
+        margin: 0 auto
+    }
+
+	.odds-box {
+		width:100%;
+		text-align: center;
+		font-size: 40px;
+		font-weight: bold;
+		text-shadow: #e0e0e0 1px 1px 0;
+	}
+
+    .odds-box-stacked {
+        width:100%;
+        font-size:15px;
+        font-weight: bold;
+        text-shadow: #e0e0e0 1px 1px 0;
+        display: block;
+        float:left;
+    }
+
+    @@media only screen and (max-width: 440px) {
+        .odds-box-stacked {
+            font-size: 13px;
+        }
+    }
+
+
+	@@media only screen and (max-width:390px) {
+        .odds-box-stacked {
+            font-size: 11px;
+        }
+	}
+
+    .fade-in {
+        animation: fadeIn ease @FadeInTime;
+        -webkit-animation: fadeIn ease @FadeInTime;
+        -moz-animation: fadeIn ease @FadeInTime;
+        -o-animation: fadeIn ease @FadeInTime;
+        -ms-animation: fadeIn ease @FadeInTime;
+    }
+
+</style>
+
+
+@code {
+
+    private const string FadeInTime = "1s";
+    private const int CardMinHeight = 75;
+
+    [Parameter]
+    public BrowserWindowSizeContainer browserSize { get; set; }
+
+    [Parameter]
+    public int playerNumber { get; set; }
+
+    private PlayerController _player;
+    [Parameter]
+    public PlayerController player { get; set; }
+
+    [Parameter]
+    public EventCallback<PlayerController> RemovePlayer { get; set; }
+
+    PokerOddsPro.Shared.Components.PlayerResultsDisplay playerResultsDisplay { get; set; }
+    private string textToggle => (playerResultsDisplay == null || !playerResultsDisplay.IsToggleOn) ? "+" : "-";
+    private string opacityToggle => (player.HasResults) ? "1" : "0.5";
+
+    private CardDisplayTypeEnum cardDisplayType => (!browserSize.IsMobileProportion) ? CardDisplayTypeEnum.Classic : CardDisplayTypeEnum.Modern;
+    private int CardMarginInUnits => (!browserSize.IsMobileProportion) ? 8 : 4;
+    private int MaxHeightOfPlayerDisplayInUnits => (!browserSize.IsMobileProportion) ? 15 : 10;
+
+    private string minHeight => IntToDisplayString(CardMarginInUnits * 2 + CardMinHeight);
+    private string heightInVh => IntToDisplayString(MaxHeightOfPlayerDisplayInUnits, DisplayMeasurementTypeEnum.vh);
+
+    private string binImageUrl => $"url({binImage})";
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (_player != player)
+        {
+            player.LatestResultsUpdated += (s, e) => StateHasChanged();
+            if (!firstRender)
+            {
+                _player.LatestResultsUpdated -= (s, e) => StateHasChanged();
+                playerResultsDisplay.ToggleOff();
+                StateHasChanged();
+            }
+
+            _player = player;
+        }
+    }
+
+    private string GetCssForCard(CardSlot card)
+    {
+        string customCSS = $"width:calc(50% - 3px); float:left;";
+        return customCSS;
+    }
+
+    private string GetPercentageTextOpacity(double value) => (value > 0) ? "1" : "0.25";
+
+    private string GetPercentageDisplay(double value) => (value > 0) ? value.ToString("P1") : "-";
+
+    private async Task DeletePlayer() => await RemovePlayer.InvokeAsync(player);
+}

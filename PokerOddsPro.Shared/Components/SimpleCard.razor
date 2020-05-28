@@ -1,0 +1,43 @@
+﻿@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web
+@using PokerOddsPro.Shared.Dto;
+@using PokerOddsPro.Shared.ViewModels;
+@using static PokerOddsPro.Shared.Helpers.Helper;
+
+<div class="card-selection @activeState @displayDirection" @onclick="SelectCardTask">
+    <div class="@displayDirection number-container">@card.CardInfo.GetNumberDisplay()</div>
+    <div class="@displayDirection suit-container">
+        <img class="@displayDirection suit-image" src="@GetLinkToSuit(card.CardInfo.CardSuit)" />
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public Card card { get; set; }
+
+    [Parameter]
+    public EventCallback<Card> SetSelectedCard { get; set; }
+
+    [Parameter]
+    public DisplayDirectionEnum displayDirection { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        card.IsAvailableUpdated += (s, e) =>
+        {
+            StateHasChanged();
+        };
+    }
+
+    //todo CARD IS ACTIVE STATUS  NOT UPDATING CORRECNTLY
+    public string activeState => card.IsAvailable ? "active" : "disabled";
+
+    public async Task SelectCardTask()
+    {
+        if (card.IsAvailable)
+        {
+            await SetSelectedCard.InvokeAsync(card);
+            StateHasChanged();
+        }
+    }
+}

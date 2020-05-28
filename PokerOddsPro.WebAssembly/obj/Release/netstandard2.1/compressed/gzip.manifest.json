@@ -1,0 +1,174 @@
+{
+  "FilesToCompress": [
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\hKwSfiLTOpXE52koAL8wO3ayU0nH7wpYuZgdgOtt48Q=.hash",
+      "Source": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.WebAssembly\\obj\\Release\\netstandard2.1\\blazor\\linker\\BlazorPro.BlazorSize.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/BlazorPro.BlazorSize.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\2nmM1KOOH3RI2yb_n-9U9ZkroB8C8PUoCkZu3aX769I=.hash",
+      "Source": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.WebAssembly\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Components.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Components.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\McF1z8wYxZVHuKqIyQBRnKcmn5qV9FaiJZks9pNer5M=.hash",
+      "Source": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.WebAssembly\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Components.Web.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Components.Web.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\yqwGBe2FyWrlAA3Qj4p2oD_G-Exdj-gXcY-dE1r-ZtA=.hash",
+      "Source": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.WebAssembly\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Components.WebAssembly.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Components.WebAssembly.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\jzHgXWAvWMkKIGFjZoT84tbe72E_H7CvTr-Dryh4QPs=.hash",
+      "Source": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.WebAssembly\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Bcl.AsyncInterfaces.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Bcl.AsyncInterfaces.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\NSRFR3lHTOaGIOgBorw6z0H2Fs53Y4r_V98v1L6JHNY=.hash",
+      "Source": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.WebAssembly\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Configuration.Abstractions.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Configuration.Abstractions.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\NKVF8pOVlCYZQs6BUBPVelUS78Em41s-jsOKEkMFWxA=.hash",
+      "Source": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.WebAssembly\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Configuration.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Configuration.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\Xza_F9YjoSMj4hn64wwyokznN0llMqFfc57yHt6IKho=.hash",
+      "Source": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.WebAssembly\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Configuration.Json.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Configuration.Json.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\RHPY6cQIQ5NNQFXJnX2SNwfrRZ46KBTEeQ9Z5yoqOIk=.hash",
+      "Source": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.WebAssembly\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.DependencyInjection.Abstractions.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\_Fz9buYVI75_iv6T0sKiJeGEJRBOKLzU4JsolfA0GSw=.hash",
+      "Source": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.WebAssembly\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.DependencyInjection.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.DependencyInjection.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\3NvKJDB3vnAnDHLmDKmBXRYNHXQPmvw6Bz7L6jZ33Gk=.hash",
+      "Source": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.WebAssembly\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Logging.Abstractions.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Logging.Abstractions.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\zMPmmzxM68r8oGoSZdoZb8aOCdm3KDLnhS8vAx8mzBg=.hash",
+      "Source": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.WebAssembly\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Logging.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Logging.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\ONq1YJlHjBFySq-wlHqBwL0pCal_xycyvjEus4OVkzI=.hash",
+      "Source": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.WebAssembly\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Options.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Options.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\2ObuZqHjjY6Gmj3Esuca3bAg0h1rxeRNUe_iHbkycOA=.hash",
+      "Source": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.WebAssembly\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Primitives.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Primitives.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\_WXZVUWZF5d9_6FNZp_-HYp7uazwItpNb6v0bMWxNI8=.hash",
+      "Source": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.WebAssembly\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.JSInterop.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.JSInterop.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\hxnixznereufPygwGyBvYxKeSx2MhvCuWff57xiHJtI=.hash",
+      "Source": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.WebAssembly\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.JSInterop.WebAssembly.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.JSInterop.WebAssembly.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\ZkZ8gjp5tHTPujlcbM3gYzXFZZYs1qI-g8PhgP4oflQ=.hash",
+      "Source": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.WebAssembly\\obj\\Release\\netstandard2.1\\blazor\\linker\\mscorlib.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/mscorlib.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\TzeJQCGSHN8LG3D6BT6lNshax6UbJN7xeKKHG0ZxoCw=.hash",
+      "Source": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.WebAssembly\\obj\\Release\\netstandard2.1\\blazor\\linker\\PokerOddsPro.OddsEngine.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/PokerOddsPro.OddsEngine.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\8c0XtZyC3rm9y8CeTqDviwMYV8TJvkFRrv3OvmR7Nb0=.hash",
+      "Source": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.WebAssembly\\obj\\Release\\netstandard2.1\\blazor\\linker\\PokerOddsPro.Shared.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/PokerOddsPro.Shared.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\2iZy85xZD-oruebmSn8KrzHULJzyDEvyGeHzfWlqsiI=.hash",
+      "Source": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.WebAssembly\\obj\\Release\\netstandard2.1\\blazor\\linker\\PokerOddsPro.WebAssembly.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/PokerOddsPro.WebAssembly.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\uIEwAQiF-m8mgbMiFdQ3gheEl2guTIC05pkHGDyyky8=.hash",
+      "Source": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.WebAssembly\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Core.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Core.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\pNb3qrQ9JQn2SgLrXn11_54VzKtlwbBmO7mHv5ho5sQ=.hash",
+      "Source": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.WebAssembly\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\e1iPv7QADID1pru0KVELZjmztzYdQtRi8M-Tx4lB9mk=.hash",
+      "Source": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.WebAssembly\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Net.Http.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Net.Http.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\SmDa6DTj8joatg6EcY2N1tw7sScI8c3EtufrzYU_Wi0=.hash",
+      "Source": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.WebAssembly\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Net.Http.WebAssemblyHttpHandler.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Net.Http.WebAssemblyHttpHandler.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\iN4_LJly8LW_qNwAZCL5lmvLoNivC543AndIsiC_3tg=.hash",
+      "Source": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.WebAssembly\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Runtime.CompilerServices.Unsafe.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Runtime.CompilerServices.Unsafe.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\aU2UROwfskC_-nkEJxYcWGT9Vuy_cryNUEGBckhZMn4=.hash",
+      "Source": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.WebAssembly\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Text.Encodings.Web.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Text.Encodings.Web.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\S5MAad6VuLNgNPkCvxiXg4SjGX1Vte8oz1UAyY5URh4=.hash",
+      "Source": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.WebAssembly\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Text.Json.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Text.Json.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\pWwEiGwHOwunK7wc7jzR0zFMR9Zi0csZCGyLzIquJa4=.hash",
+      "Source": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.WebAssembly\\obj\\Release\\netstandard2.1\\blazor\\linker\\WebAssembly.Bindings.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/WebAssembly.Bindings.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\mPoqx7XczFHBWk3gRNn0hc9ekG1OvkKY4XiKRY5Mj5U=.hash",
+      "Source": "C:\\Users\\dyh12\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.runtime\\3.2.0\\tools\\dotnetwasm\\wasm\\dotnet.3.2.0.js",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/wasm\/dotnet.3.2.0.js.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\3S0qzYaBEKOBXarzVLNzNAFXlwJr6nI3lFlYUpQTPH8=.hash",
+      "Source": "C:\\Users\\dyh12\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.runtime\\3.2.0\\tools\\dotnetwasm\\wasm\\dotnet.timezones.dat",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/wasm\/dotnet.timezones.dat.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\UC-3Rm1NkdNdlIrzYARo_dO-HDlS5mhPxo0IQv7kma8=.hash",
+      "Source": "C:\\Users\\dyh12\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.runtime\\3.2.0\\tools\\dotnetwasm\\wasm\\dotnet.wasm",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/wasm\/dotnet.wasm.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\oU0moF6IIkna1pMoSD6Ze63s6aHfjCtUflz7xDmENPg=.hash",
+      "Source": "C:\\Users\\dyh12\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.build\\3.2.0\\tools\\blazor\\blazor.webassembly.js",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/blazor.webassembly.js.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\hsPDYdbRBzWsdWk6Jl2G2EA7XcrVt5f1Vm_YmcqbgNM=.hash",
+      "Source": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.WebAssembly\\obj\\Release\\netstandard2.1\\blazor\\blazor.boot.json",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/blazor.boot.json.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\PFBbhFJ6sbDs6Li7dmqtNcCk4N_r8_TgTcN3oLAHuKo=.hash",
+      "Source": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.WebAssembly\\obj\\Release\\netstandard2.1\\blazor\\service-worker-assets.js",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\service-worker-assets.js.gz"
+    }
+  ]
+}

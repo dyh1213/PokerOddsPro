@@ -1,0 +1,195 @@
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web
+@using PokerOddsPro.Shared.Dto;
+@using PokerOddsPro.Shared.Helpers;
+@using PokerOddsPro.Shared.ViewModels;
+
+<div style="@((CustomWrapperCss != null) ? CustomWrapperCss : @standardWrapperCss)">
+    <div style="position: relative;padding-top:153%; max-width:135px; min-width:10px; width:auto">
+        <div style="position: absolute; left: 0; top: 0; width:100%; height:100%;">
+            @if (card.IsSelected || ShowCard)
+            {
+                <div class="card @DisplayMode" style="transform:rotateY(@degreesDisplay);">
+                    @if (CardDisplayType == CardDisplayTypeEnum.Modern)
+                    {
+                        <div class="front modern" style="background-image:@cardImageModernPath;" @onclick="() => card.SelectCardSlot()">
+                            <div class="num" style="color:@cardTextColor;">@cardNumberDisplay</div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="front" style="background-image:@cardImageClassicPath;" @onclick="() => card.SelectCardSlot()" />
+                    }
+                    <div class="back @shouldFadeInAnimation"></div>
+                </div>
+                cardRendered = true;
+            }
+            else
+            {
+                <div class="card @DisplayMode invis" style="background-image:@invisCardIcon;" @onclick="() => card.SelectCardSlot()"></div>
+                cardRendered = false; ;
+            }
+        </div>
+    </div>
+</div>
+
+<style>
+
+    .card {
+        width: 100%;
+        height: 100%;
+        min-height: 75px;
+        -webkit-transition: -webkit-transform 0.2s, box-shadow 0.2s;
+        -moz-transition: -moz-transform 0.2s, box-shadow 0.2s;
+        -ms-transition: -ms-transform 0.2s, box-shadow 0.2s;
+        -o-transition: -o-transform 0.2s, box-shadow 0.2s;
+        transition: transform 0.2s, box-shadow 0.2s;
+        cursor: default;
+        border-radius: 8px;
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        -o-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+
+        .card.DarkMode {
+            box-shadow: @GlobalStyles.ShadowCss;
+            border-color: black;
+        }
+
+        .card.LightMode {
+            box-shadow: @GlobalStyles.ShadowCss;
+            border-color: white;
+        }
+
+        .card.invis {
+            background-color: rgba( 0, 0, 0, 0.2);
+            background-position: center;
+            background-repeat: no-repeat;
+            border-style: solid;
+            border-width: 2px;
+            opacity: 0.5;
+        }
+
+            .card.invis:hover {
+                background-color: rgba( 0, 0, 0, 0.5);
+            }
+
+        .card > .front, .card > .back {
+            border-radius: 8px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -ms-backface-visibility: hidden;
+            -o-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .card > .front {
+            border: 2px solid;
+            background-color: white;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+
+            .card > .front:hover {
+                opacity: 0.5;
+                cursor: pointer;
+            }
+
+            .card > .front.modern {
+                background-position: 50% 75%;
+                background-size: 60%;
+            }
+
+        .card > .back {
+            background-image: @($"url('{ConstPaths.cardBacksideImage}')");
+            background-repeat: repeat;
+            box-sizing: border-box;
+            moz-box-sizing: border-box;
+            border: 4px solid;
+            -webkit-transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+            -ms-transform: rotateY(180deg);
+            -o-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+        }
+
+        .card .num {
+            position: absolute;
+            left: 7px;
+            top: 4px;
+            font-size: 20px;
+            font-weight: bold;
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -ms-backface-visibility: hidden;
+            -o-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+    .fade-in {
+        animation: fadeIn ease @faseInTime;
+        -webkit-animation: fadeIn ease @faseInTime;
+        -moz-animation: fadeIn ease @faseInTime;
+        -o-animation: fadeIn ease @faseInTime;
+        -ms-animation: fadeIn ease @faseInTime;
+    }
+</style>
+
+@code {
+    private CardSlot _card { get; set; }
+    [Parameter]
+    public CardSlot card { get; set; }
+
+    [Parameter]
+    public DisplayModeEnum DisplayMode { get; set; }
+
+    [Parameter]
+    public CardDisplayTypeEnum CardDisplayType { get; set; }
+
+    [Parameter]
+    public string CustomWrapperCss { get; set; }
+
+    private const string standardWrapperCss = "margin:10px; float:left; min-width:50px;";
+    private const string faseInTime = "0.7s";
+
+    private bool ShowCard => (card.Card != null);
+
+    private string invisCardIcon => (DisplayMode == DisplayModeEnum.LightMode) ? $"url('{ConstPaths.whiteEmptyCardCirclePath}')" : $"url('{ConstPaths.blackEmptyCardCirclePath}')";
+
+    private string cardNumberDisplay => (ShowCard) ? card.Card.CardInfo.GetNumberDisplay() : "";
+    private string cardSuitDisplay => (ShowCard) ? card.Card.CardInfo.CardSuit.ToString().ToLower() : "";
+    private string degreesDisplay => (ShowCard) ? "0deg" : "180deg";
+
+    private string cardImageModernPath => $"url('{Helper.GetLinkToSuit(card.Card?.CardInfo.CardSuit)}')";
+    private string cardImageClassicPath => $"url('{Helper.GetLinkToCard(card.Card?.CardInfo)}')";
+    private string cardTextColor => Helper.GetColor(card.Card?.CardInfo.CardSuit);
+
+    private bool cardRendered;
+    private string shouldFadeInAnimation => ((!cardRendered) ? ConstPaths.fadeInAnimationClass : "");
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (_card != card)
+        {
+            card.IsSelectedCardSet += (s, e) => StateHasChanged();
+            card.IsSelectedCardRemoved += (s, e) => StateHasChanged();
+            card.CardSlotCardUpdated += (s, e) => StateHasChanged();
+
+            if (!firstRender)
+            {
+                _card.IsSelectedCardSet -= (s, e) => StateHasChanged();
+                _card.IsSelectedCardRemoved -= (s, e) => StateHasChanged();
+                _card.CardSlotCardUpdated -= (s, e) => StateHasChanged();
+            }
+
+            _card = card;
+        }
+    }
+}

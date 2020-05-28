@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "JaevDc3hSFb2n9mIBfvoDtmBj1eDeDB63sihmRfsH1kyre9qqQ7k1NPS8v2fwt3vDQ8LlXh22Wj2FzNM256M/A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\dyh12\\source\\repos\\PokerOddsPro\\PokerOddsPro.OddsEngine\\PokerOddsPro.OddsEngine.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dyh12\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\dyh12\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

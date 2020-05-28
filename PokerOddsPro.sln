@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokerOddsPro.WebAssembly", "PokerOddsPro.WebAssembly\PokerOddsPro.WebAssembly.csproj", "{DB9D868D-CCD9-43A7-B55D-6EE7AEF4692A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokerOddsPro.Shared", "PokerOddsPro.Shared\PokerOddsPro.Shared.csproj", "{6CF3DA24-124A-42AA-8173-E3934A39422B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokerOddsPro.OddsEngine", "PokerOddsPro.OddsEngine\PokerOddsPro.OddsEngine.csproj", "{402F7418-F2B8-472E-87F3-03D85762FA49}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokerOddsPro.ServerApp", "PokerOddsPro.ServerApp\PokerOddsPro.ServerApp.csproj", "{29F61BE4-5461-4792-A528-E859D2C36442}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB9D868D-CCD9-43A7-B55D-6EE7AEF4692A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB9D868D-CCD9-43A7-B55D-6EE7AEF4692A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB9D868D-CCD9-43A7-B55D-6EE7AEF4692A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB9D868D-CCD9-43A7-B55D-6EE7AEF4692A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CF3DA24-124A-42AA-8173-E3934A39422B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CF3DA24-124A-42AA-8173-E3934A39422B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CF3DA24-124A-42AA-8173-E3934A39422B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CF3DA24-124A-42AA-8173-E3934A39422B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{402F7418-F2B8-472E-87F3-03D85762FA49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{402F7418-F2B8-472E-87F3-03D85762FA49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{402F7418-F2B8-472E-87F3-03D85762FA49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{402F7418-F2B8-472E-87F3-03D85762FA49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29F61BE4-5461-4792-A528-E859D2C36442}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29F61BE4-5461-4792-A528-E859D2C36442}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29F61BE4-5461-4792-A528-E859D2C36442}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29F61BE4-5461-4792-A528-E859D2C36442}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {536512A1-40FC-441B-A9CB-2A9992A83C63}
+	EndGlobalSection
+EndGlobal

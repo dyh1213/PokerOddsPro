@@ -1,0 +1,5 @@
+﻿<linker>
+  <assembly fullname="PokerOddsPro.WebAssembly">
+    <type fullname="*" required="true" />
+  </assembly>
+</linker>

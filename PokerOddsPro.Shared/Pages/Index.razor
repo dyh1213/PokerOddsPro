@@ -1,0 +1,122 @@
+﻿@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web
+@using BlazorPro.BlazorSize;
+@using PokerOddsPro.Shared.Components;
+@using PokerOddsPro.Shared.Services;
+@using PokerOddsPro.Shared.Dto;
+@using static PokerOddsPro.Shared.Helpers.Helper;
+@inject ResizeListener listener;
+@implements IDisposable;
+@page "/";
+
+<div class="flex-layout">
+    <div class="flex-left">
+
+        <CardBoard BoardDetails="@_cardGameController.BoardDetails" Cards="@_cardGameController.BoardCardSlots" browserSize="@browser" />
+
+        @for (int i = 0; i < PlayerCount; i++)
+        {
+            var player = _cardGameController.Players[i];
+            <PlayerDisplay player=@player
+                           RemovePlayer="RemovePlayer"
+                           playerNumber="@(i+1)"
+                           browserSize="@browser" />
+        }
+
+        <div class="add-player-button" @onclick="AddPlayer">ADD PLAYER</div>
+    </div>
+
+    <CardSelectionPanel _cardGameController="@_cardGameController" displayDirection="(browser.IsSmallMedia) ? DisplayDirectionEnum.Horizonal : DisplayDirectionEnum.Vertical" />
+
+</div>
+
+<style>
+
+    .flex-layout {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .flex-left {
+        background-color: lemonchiffon;
+        width: 100%;
+        overflow: auto;
+        flex: 1 1 auto;
+        overflow-y: auto;
+        height: 0px;
+    }
+
+    @@media only screen and (min-width:@IntToDisplayString(HorizontalToVerticalCardThreshold)) {
+        .flex-layout {
+            width: 100%;
+            flex-direction: row;
+        }
+
+        .flex-left {
+            flex: 5 0 500px;
+            height: calc(100vh - 56px);
+        }
+    }
+
+    .add-player-button {
+        height: 5vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top: grey 2px dotted;
+        border-bottom: grey 2px dotted;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+
+        .add-player-button:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+</style>
+
+@code {
+
+    private HoldemCardGameManager _cardGameController { get; set; }
+    private int PlayerCount => _cardGameController.Players.Count();
+
+    private BrowserWindowSizeContainer browser { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        _cardGameController = new HoldemCardGameManager(numberOfPlayers: 2, minimumBoardCards: 2);
+        browser = new BrowserWindowSizeContainer();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            listener.OnResized += WindowResized;
+        }
+        var result = await listener.GetBrowserWindowSize();
+        WindowResized(null, result);
+    }
+
+    private void RenderPage(object sender, EventArgs e) => StateHasChanged();
+
+    private async Task AddPlayer() => await _cardGameController.AddPlayer();
+
+    private async Task RemovePlayer(PlayerController player) => await _cardGameController.RemovePlayer(player);
+
+    private async void WindowResized(object _, BrowserWindowSize window)
+    {
+        var sizeUpdated = browser.UpdateSize(window);
+        if (sizeUpdated)
+        {
+            StateHasChanged();
+        }
+    }
+
+    void IDisposable.Dispose()
+    {
+        listener.OnResized -= WindowResized;
+    }
+}

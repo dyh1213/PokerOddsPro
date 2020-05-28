@@ -1,0 +1,107 @@
+﻿@using Microsoft.AspNetCore.Components.Web
+@using PokerOddsPro.Shared.Dto;
+@using PokerOddsPro.Shared.Services;
+@using PokerOddsPro.Shared.Helpers;
+@using PokerOddsPro.OddsEngine.Dto;
+@using PokerOddsPro.Shared.ViewModels;
+
+
+        @if (displayDirection == DisplayDirectionEnum.Vertical)
+        {
+        <div class="display-panel vertical">
+            <div style="height: calc(100% - 50px); overflow-x: hidden; overflow-y: auto;">
+                @foreach (var suit in Enumerators.EnumerateCardSuits())
+                {
+                    <div style="float:left;height:100%; width:25%">
+                        @foreach (var card in _cardGameController.GetCardsOfSuit(suit))
+                        {
+                            <SimpleCard card="@card" SetSelectedCard="SetSelectedCard" displayDirection="@DisplayDirectionEnum.Vertical" />
+                        }
+                    </div>
+                }
+            </div>
+
+            <div class="card-selection active simple-button" @onclick="async () => _cardGameController.ResetBoard()">
+                CLEAR
+            </div>
+        </div>
+            }
+            else
+            {
+            <div class="display-panel">
+                <div style="width:50%; float:left">
+                    <div class="card-selection active simple-button" @onclick="async () => _cardGameController.ResetBoard()">
+                        CLEAR
+                    </div>
+                </div>
+                <div style="width:50%; float:left">
+                    <div class="card-selection active simple-button" @onclick="() => ToggleVerticalPanel()">
+                        @DisplayString
+                    </div>
+                </div>
+                <div class="accordion-content" style="max-height:@heightOfHorizontalPanel; display:flex; flex-direction:column; width:100%">
+                    @foreach (var suit in Enum.GetValues(typeof(CardSuitEnum)).Cast<CardSuitEnum>())
+                    {
+                        <div style="float:left; width:100%; flex: 1 0 auto;">
+                            @foreach (var card in _cardGameController.GetCardsOfSuit(suit))
+                            {
+                                <SimpleCard card="@card" SetSelectedCard="SetSelectedCard" displayDirection="@DisplayDirectionEnum.Horizonal" />
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+                }
+
+
+
+<style>
+
+    .display-panel {
+        background-color: #3D3D3D;
+    }
+
+        .display-panel.vertical {
+            height: calc(100vh - 56px);
+            flex: 1 0 440px;
+        }
+
+    .accordion-content {
+        -webkit-transition: max-height 1s;
+        -moz-transition: max-height 1s;
+        -ms-transition: max-height 1s;
+        -o-transition: max-height 1s;
+        transition: max-height 1s;
+        overflow: hidden;
+    }
+
+</style>
+
+@code {
+
+    [Parameter]
+    public HoldemCardGameManager _cardGameController { get; set; }
+
+    [Parameter]
+    public DisplayDirectionEnum displayDirection { get; set; }
+
+    private async Task SetSelectedCard(Card CardInfo) => await _cardGameController.SetSelectedCard(CardInfo);
+
+    //code used in horizontal panel toggle (move up/down)
+    private bool IsToggleOn = false;
+    private string DisplayString => (IsToggleOn) ? "Hide" : "Show";
+
+    protected override async Task OnInitializedAsync()
+    {
+        _cardGameController.selectedCardSlotUpdatedFromNull += (s, e) => ToggleVerticalPanel();
+    }
+
+    private void ToggleVerticalPanel()
+    {
+        IsToggleOn = !IsToggleOn;
+        StateHasChanged();
+    }
+
+    private string heightOfHorizontalPanel => (IsToggleOn) ? "400px" : "0px";
+
+}

@@ -1,0 +1,9 @@
+C:\Users\dyh12\source\repos\PokerOddsPro\PokerOddsPro.OddsEngine\bin\Release\netstandard2.0\PokerOddsPro.OddsEngine.deps.json
+C:\Users\dyh12\source\repos\PokerOddsPro\PokerOddsPro.OddsEngine\bin\Release\netstandard2.0\PokerOddsPro.OddsEngine.dll
+C:\Users\dyh12\source\repos\PokerOddsPro\PokerOddsPro.OddsEngine\bin\Release\netstandard2.0\PokerOddsPro.OddsEngine.pdb
+C:\Users\dyh12\source\repos\PokerOddsPro\PokerOddsPro.OddsEngine\obj\Release\netstandard2.0\PokerOddsPro.OddsEngine.csprojAssemblyReference.cache
+C:\Users\dyh12\source\repos\PokerOddsPro\PokerOddsPro.OddsEngine\obj\Release\netstandard2.0\PokerOddsPro.OddsEngine.AssemblyInfoInputs.cache
+C:\Users\dyh12\source\repos\PokerOddsPro\PokerOddsPro.OddsEngine\obj\Release\netstandard2.0\PokerOddsPro.OddsEngine.AssemblyInfo.cs
+C:\Users\dyh12\source\repos\PokerOddsPro\PokerOddsPro.OddsEngine\obj\Release\netstandard2.0\PokerOddsPro.OddsEngine.csproj.CoreCompileInputs.cache
+C:\Users\dyh12\source\repos\PokerOddsPro\PokerOddsPro.OddsEngine\obj\Release\netstandard2.0\PokerOddsPro.OddsEngine.dll
+C:\Users\dyh12\source\repos\PokerOddsPro\PokerOddsPro.OddsEngine\obj\Release\netstandard2.0\PokerOddsPro.OddsEngine.pdb

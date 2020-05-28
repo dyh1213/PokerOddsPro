@@ -1,0 +1,4 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/" Path="C:\Users\dyh12\source\repos\PokerOddsPro\PokerOddsPro.WebAssembly\bin\Release\netstandard2.1\wwwroot\" />
+  <ContentRoot BasePath="_content/BlazorPro.BlazorSize" Path="C:\Users\dyh12\.nuget\packages\blazorpro.blazorsize\2.0.2\build\..\staticwebassets\" />
+</StaticWebAssets>
